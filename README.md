@@ -9,7 +9,6 @@ git clone git@github.com:StealthStop/SignalProduction.git
 cd SignalProduction
 
 git checkout -b forUL --track origin/forUL
-
 ```
 
 To run a test submission to condor, an example would be:
