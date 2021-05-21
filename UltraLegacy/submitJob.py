@@ -125,25 +125,30 @@ def generate_job_steerer(workingDir, year, model, mass, steps):
     scriptFile.close()
 
 # Write Condor submit file 
-def generate_condor_submit(workingDir, eventsPerJob, specEventsPerJob, njobs):
+def generate_condor_submit(workingDir, outputDir, eventsPerJob, specEventsPerJob, njobs):
 
     condorSubmit = open("%s/condorSubmit.jdl"%(workingDir), "w")
-    condorSubmit.write("Executable           =  %s/runJob.sh\n"%(workingDir))
-    condorSubmit.write("Universe             =  vanilla\n")
-    condorSubmit.write("Requirements         =  OpSys == \"LINUX\" && Arch ==\"x86_64\"\n")
-    condorSubmit.write("Request_Memory       =  12 Gb\n")
-    condorSubmit.write("Output               =  %s/logs/$(Cluster)_$(Process).stdout\n"%(workingDir))
-    condorSubmit.write("Error                =  %s/logs/$(Cluster)_$(Process).stderr\n"%(workingDir))
-    condorSubmit.write("Log                  =  %s/logs/$(Cluster)_$(Process).log\n"%(workingDir))
-    condorSubmit.write("x509userproxy        =  $ENV(X509_USER_PROXY)\n")
-    condorSubmit.write("Transfer_Input_Files =  %s/payload.tar.gz\n\n"%(workingDir))
+    condorSubmit.write("Executable              =  %s/runJob.sh\n"%(workingDir))
+    condorSubmit.write("Universe                =  vanilla\n")
+    condorSubmit.write("Requirements            =  OpSys == \"LINUX\" && Arch ==\"x86_64\"\n")
+    condorSubmit.write("RequestMemory           =  8 Gb\n")
+    condorSubmit.write("RequestCpus             =  4\n")
+    condorSubmit.write("should_transfer_files   =  YES\n")
+    condorSubmit.write("when_to_transfer_output =  ON_EXIT\n")
+    condorSubmit.write("x509userproxy           =  $ENV(X509_USER_PROXY)\n")
+    condorSubmit.write("Transfer_Input_Files    =  %s/payload.tar.gz\n\n"%(workingDir))
 
     for iJob in xrange(0, njobs):
         
         seed = random.randint(0, 2147483647)
 
+        condorSubmit.write("transfer_output_remaps  = \"MINIAOD_out.root = condor/%s/MINIAOD_%d.root\"\n"%(outputDir.split("condor/")[-1], iJob))
+        condorSubmit.write("Output                  =  %s/logs/job_%d.stdout\n"%(workingDir, iJob))
+        condorSubmit.write("Error                   =  %s/logs/job_%d.stderr\n"%(workingDir, iJob))
+        condorSubmit.write("Log                     =  %s/logs/job_%d.log\n"%(workingDir, iJob))
+
         if iJob == njobs-1:
-            condorSubmit.write("Arguments       = %d %d\n"%(seed, eventsPerJob+specEventsPerJob))
+            condorSubmit.write("Arguments               = %d %d\n"%(seed, eventsPerJob+specEventsPerJob))
         else:
             condorSubmit.write("Arguments       = %d %d\n"%(seed, eventsPerJob))
 
@@ -161,7 +166,7 @@ if __name__ == '__main__':
     parser.add_argument("--mass"         , dest="mass"         , help="Which mass"              , type=str , required=True)
     parser.add_argument("--nEvents"      , dest="nEvents"      , help="Number of jobs"          , type=int , required=True)
     parser.add_argument("--eventsPerJob" , dest="eventsPerJob" , help="Script file for step1"   , type=int , default=100)
-    parser.add_argument("--outputDir"    , dest="outputDir"    , help="Location for output"     , type=str , required=True)
+    #parser.add_argument("--outputDir"    , dest="outputDir"    , help="Location for output"     , type=str , required=True)
     args = parser.parse_args()
 
     tag          = args.tag
@@ -180,13 +185,14 @@ if __name__ == '__main__':
     baseDir = "%s"%(PWD)
     taskDir = strftime("%Y%m%d_%H%M%S")
     
-    outputDir = args.outputDir
+    #outputDir = args.outputDir
+    outputDir = "%s/condor/%s_%s%s%s_%s/output"%(baseDir, tag, year, model, mass, taskDir) 
     workingDir = "%s/condor/%s_%s%s%s_%s"%(baseDir, tag, year, model, mass,  taskDir)
     
     # After defining the directory to work the job in and output to, make them
-    subprocess.call(["eos", "root://cmseos.fnal.gov", "mkdir", "-p", outputDir[23:]])
+    #subprocess.call(["eos", "root://cmseos.fnal.gov", "mkdir", "-p", outputDir[23:]])
     if not os.path.isdir(workingDir): os.makedirs(workingDir)
-    #if not os.path.isdir(outputDir): os.makedirs(outputDir)
+    if not os.path.isdir(outputDir): os.makedirs(outputDir)
     
     if outputDir.split("/")[-1] == "":  outputDir  = outputDir[:-1]
     if workingDir.split("/")[-1] == "": workingDir = workingDir[:-1]
@@ -216,7 +222,7 @@ if __name__ == '__main__':
     specEventsPerJob = nevents - njobs*eventsPerJob
 
     # Make the jdl to hold condor's hand
-    generate_condor_submit(workingDir, eventsPerJob, specEventsPerJob, njobs)
+    generate_condor_submit(workingDir, outputDir, eventsPerJob, specEventsPerJob, njobs)
 
     subprocess.call(["chmod", "+x", "%s/runJob.sh"%(workingDir)])
 
