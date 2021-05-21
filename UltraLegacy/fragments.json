@@ -1,0 +1,88 @@
+{
+    "RPV" : {
+        "2016" : {
+            "500" : "SUS-RunIISummer15wmLHEGS-00324-fragment",
+            "550" : "SUS-RunIISummer15wmLHEGS-00325-fragment",
+            "600" : "SUS-RunIISummer15wmLHEGS-00326-fragment",
+            "650" : "SUS-RunIISummer15wmLHEGS-00327-fragment",
+            "700" : "SUS-RunIISummer15wmLHEGS-00328-fragment",
+            "750" : "SUS-RunIISummer15wmLHEGS-00329-fragment",
+            "800" : "SUS-RunIISummer15wmLHEGS-00330-fragment",
+            "850" : "SUS-RunIISummer15wmLHEGS-00331-fragment",
+            "900" : "SUS-RunIISummer15wmLHEGS-00331-fragment"
+        },
+        "2017" : {
+            "500" : "SUS-RunIIFall17wmLHEGS-00185-fragment",
+            "550" : "SUS-RunIIFall17wmLHEGS-00186-fragment",
+            "600" : "SUS-RunIIFall17wmLHEGS-00187-fragment",
+            "650" : "SUS-RunIIFall17wmLHEGS-00188-fragment",
+            "700" : "SUS-RunIIFall17wmLHEGS-00189-fragment",
+            "750" : "SUS-RunIIFall17wmLHEGS-00190-fragment",
+            "800" : "SUS-RunIIFall17wmLHEGS-00191-fragment",
+            "850" : "SUS-RunIIFall17wmLHEGS-00192-fragment",
+            "900" : "SUS-RunIIFall17wmLHEGS-00193-fragment"
+        },
+        "2018" : {
+            "500" : "SUS-RunIIFall18wmLHEGS-00145-fragment",
+            "550" : "SUS-RunIIFall18wmLHEGS-00146-fragment",
+            "600" : "SUS-RunIIFall18wmLHEGS-00147-fragment",
+            "650" : "SUS-RunIIFall18wmLHEGS-00148-fragment",
+            "700" : "SUS-RunIIFall18wmLHEGS-00149-fragment",
+            "750" : "SUS-RunIIFall18wmLHEGS-00150-fragment",
+            "800" : "SUS-RunIIFall18wmLHEGS-00151-fragment",
+            "850" : "SUS-RunIIFall18wmLHEGS-00152-fragment",
+            "900" : "SUS-RunIIFall18wmLHEGS-00153-fragment"
+        }
+    },
+    "SYY" : {
+        "2016" : {
+            "500" : "SUS-RunIIFall18wmLHEGS-00214-fragment",
+            "550" : "SUS-RunIIFall18wmLHEGS-00215-fragment",
+            "600" : "SUS-RunIIFall18wmLHEGS-00216-fragment",
+            "650" : "SUS-RunIIFall18wmLHEGS-00217-fragment",
+            "700" : "SUS-RunIIFall18wmLHEGS-00218-fragment",
+            "750" : "SUS-RunIIFall18wmLHEGS-00219-fragment",
+            "800" : "SUS-RunIIFall18wmLHEGS-00220-fragment",
+            "850" : "SUS-RunIIFall18wmLHEGS-00221-fragment",
+            "900" : "SUS-RunIIFall18wmLHEGS-00222-fragment"
+        },
+        "2017" : {
+            "500" : "SUS-RunIIFall17wmLHEGS-00248-fragment",
+            "550" : "SUS-RunIIFall17wmLHEGS-00249-fragment",
+            "600" : "SUS-RunIIFall17wmLHEGS-00250-fragment",
+            "650" : "SUS-RunIIFall17wmLHEGS-00251-fragment",
+            "700" : "SUS-RunIIFall17wmLHEGS-00252-fragment",
+            "750" : "SUS-RunIIFall17wmLHEGS-00253-fragment",
+            "800" : "SUS-RunIIFall17wmLHEGS-00254-fragment",
+            "850" : "SUS-RunIIFall17wmLHEGS-00255-fragment",
+            "900" : "SUS-RunIIFall17wmLHEGS-00256-fragment"
+        },
+        "2018" : {
+            "500" : "SUS-RunIIFall18wmLHEGS-00166-fragment",
+            "550" : "SUS-RunIIFall18wmLHEGS-00167-fragment",
+            "600" : "SUS-RunIIFall18wmLHEGS-00168-fragment",
+            "650" : "SUS-RunIIFall18wmLHEGS-00169-fragment",
+            "700" : "SUS-RunIIFall18wmLHEGS-00170-fragment",
+            "750" : "SUS-RunIIFall18wmLHEGS-00171-fragment",
+            "800" : "SUS-RunIIFall18wmLHEGS-00172-fragment",
+            "850" : "SUS-RunIIFall18wmLHEGS-00173-fragment",
+            "900" : "SUS-RunIIFall18wmLHEGS-00174-fragment"
+        }
+    },
+    "RPV200" : {
+        "2016" : {
+            "400" : "SUS-RunIIFall18wmLHEGS-00001-fragment",
+            "550" : "SUS-RunIIFall18wmLHEGS-00002-fragment",
+            "700" : "SUS-RunIIFall18wmLHEGS-00003-fragment",
+            "850" : "SUS-RunIIFall18wmLHEGS-00004-fragment"
+        }
+    },
+    "RPV300" : {
+        "2016" : {
+            "400" : "SUS-RunIIFall18wmLHEGS-00011-fragment",
+            "550" : "SUS-RunIIFall18wmLHEGS-00012-fragment",
+            "700" : "SUS-RunIIFall18wmLHEGS-00013-fragment",
+            "850" : "SUS-RunIIFall18wmLHEGS-00014-fragment"
+        }
+    }
+}
