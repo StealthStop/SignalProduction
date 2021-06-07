@@ -71,18 +71,18 @@
     },
     "RPV200" : {
         "2016" : {
-            "400" : "SUS-RunIIFall18wmLHEGS-00001-fragment",
-            "550" : "SUS-RunIIFall18wmLHEGS-00002-fragment",
-            "700" : "SUS-RunIIFall18wmLHEGS-00003-fragment",
-            "850" : "SUS-RunIIFall18wmLHEGS-00004-fragment"
+            "400" : "SUS-RunIISummer15wmLHEGS-00001-fragment",
+            "550" : "SUS-RunIISummer15wmLHEGS-00002-fragment",
+            "700" : "SUS-RunIISummer15wmLHEGS-00003-fragment",
+            "850" : "SUS-RunIISummer15wmLHEGS-00004-fragment"
         }
     },
     "RPV300" : {
         "2016" : {
-            "400" : "SUS-RunIIFall18wmLHEGS-00011-fragment",
-            "550" : "SUS-RunIIFall18wmLHEGS-00012-fragment",
-            "700" : "SUS-RunIIFall18wmLHEGS-00013-fragment",
-            "850" : "SUS-RunIIFall18wmLHEGS-00014-fragment"
+            "400" : "SUS-RunIISummer15wmLHEGS-00011-fragment",
+            "550" : "SUS-RunIISummer15wmLHEGS-00012-fragment",
+            "700" : "SUS-RunIISummer15wmLHEGS-00013-fragment",
+            "850" : "SUS-RunIISummer15wmLHEGS-00014-fragment"
         }
     }
 }
